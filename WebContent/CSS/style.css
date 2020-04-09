@@ -1,0 +1,196 @@
+styleForTreeSplit .sapUiLoSplitterContent{
+ width:350px !important;
+}
+.styleforLabelFontSize {
+    font-size: 0.8rem !important;
+}
+.styleForPadding1 {
+  padding-top:1.7rem;
+}
+.styleForPadding {
+  padding-top:0.96rem;
+}
+.sapUiFormResGrid>div {
+  margin-left:16px;
+margin-bottom: 0px;
+  }
+.styleForPadding .sapMOH {
+ padding:0rem!important;
+}
+.styleForFont .sapUiFormTitle {
+      font-weight: 800 !important;
+    font-size: unset !important;
+}
+/* .styleForPadding .sapMITBContent {
+ padding:0em!important;
+} */
+.styleForIconTab .sapMFlexItem{
+ width:100% !important;
+}
+.styleForIconTab .sapMITBText{
+  font-weight: 800;
+}
+.styleSelectionContent .sapMFlexItem{
+ width:100% !important;
+}
+.stylePannelContent {
+margin-left: 19.4rem !important;
+}
+
+.styleForSelection .sapMText {
+     padding: 0rem !important;
+     text-decoration: underline;
+}
+.styleForLabel{
+      padding-top: 1rem;
+      /* font-family: roboto !important; */
+      color: #222 !important;
+      font-size:14px !important;
+}
+.sapUiTableCol {
+    background-color: #deeff2;
+}
+.textAlignment{
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-bottom:1rem;
+}
+
+/* .styleForObjTitle {
+ padding-left: 16px;
+} */
+/* .styleForIcontab .sapMITBStretch  .sapMITBContent{
+ padding:0px !important;
+ background-color: #dceaef !important;
+ } */
+ .sapMITBContent{
+  padding:0px !important;
+ background-color: #dceaef !important;
+ }
+.styleFormessageStrip{
+ float:right;
+  background-color: #f8fcfc !important;
+   border: 0px !important;
+  width: 90%;
+ }
+.styleForSelection .sapMOHBottomRow{
+     display: list-item !important;
+     margin-top: 0rem;
+}
+
+.styleForSelection .sapMOHAttrRow{
+ margin-top: -13px !important;
+}
+.styleForSelection .sapMObjectAttributeColon{
+ display:none;
+}
+.styleForPadding .sapMTextLineClamp{
+         font-size: medium;
+}
+
+/* .sapUiLoSplitterH.sapUiLoSplitter {
+    white-space: nowrap;
+    background-color: #def0f2;
+} */
+
+/* .sapMITBStretch>.sapMITBContainerContent>.sapMITBContent {
+    background-color: #def0f2;
+} */
+
+/* .sapUiFormM:not(.sapUiFormEdit)>.sapUiFormResGrid>div:not(.sapMTB) {
+    background-color: #def0f2;
+} */
+
+/* .sapUiTableCell .sapMLabel, .sapUiTableColCell>.sapMLabel {
+    color: #e61212;
+    font-weight: 500;
+}
+.sapUiFormResGrid>.sapUiFormTitle {
+     color: #e61212;
+ }
+
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected>.sapMITBText {
+    color: #e61212;   
+    font-weight: 500;
+} */
+
+/* .sapUiTableTr>td {
+     background-color: #def0f2;
+} */
+
+/* .sapUiTableColHdrTr>.sapUiTableCol {
+    background-color: #def0f2;
+} */
+
+/* .sapMComboBoxTextFieldArrow {
+    font-size: large;
+ } */
+
+.sapMObjectAttributeDiv {
+     padding-top: 10px;
+} 
+
+/* .sapUiLoSplitterH.sapUiLoSplitter>.sapUiLoSplitterBar, .sapUiLoSplitterH>.sapUiLoSplitterOverlay>.sapUiLoSplitterOverlayBar {
+     background-color: #f8fcfc;
+} */
+.styleFormessageStrip .sapMText{
+   text-align: right !important;
+} 
+.styleForBackground .sapUiTableCol {
+   background-color: #def0f2 !important;
+}
+.styleForBackground .sapUiTableRowHdr{
+  background-color: #def1f2  !important;
+}
+.styleForBackground .sapUiTableColRowHdr{
+  background-color: #def1f2  !important;
+}
+.styleForBackground .sapUiTableTr>td{ 
+  background-color: #def0f2  !important;
+}
+.styleForBackground .sapUiFormResGridCont{
+  background-color: #def0f2  !important;
+}
+
+  .styleSelectionContent .sapMLIBContent{
+      background-color: #def0f2  !important;
+}  
+ .styleSelectionContent > ul > li{
+      background-color: #def0f2  !important;
+}  
+.styleforSplitter .sapUiLoSplitterBar{
+    /*   width: 1px !important; */
+      /* color: red; */
+      background-color: #f8fcfc !important;
+}
+.styleSelectionContent .sapUiFormResGridCont{
+  background-color: #def1f2  !important;
+}
+.styleSelectionContent {
+  background-color: #def1f2  !important;
+}
+.styleSelectionContent .sapMPanelContent{
+  background-color: #def1f2  !important;
+}
+.styleForCAlignment {
+    margin-left: auto;
+    margin-right: auto;
+}
+.styleForSelection .sapMText {
+     padding: 0rem !important;
+     text-decoration: underline;
+         font-size: small !important;
+    font-weight: 900 !important;
+}
+
+.styleForGridSelection .sapUiFormResGrid.sapUiFormBackgrTranslucent>div {
+        background-color: #def1f2  !important;
+}
+.styleFormessageStrip .sapMMsgStripMessage>.sapMText{
+	padding-top:1px !important;
+}
+.styleForProd{
+	margin-left: -3.8em !important;
+}
+
+

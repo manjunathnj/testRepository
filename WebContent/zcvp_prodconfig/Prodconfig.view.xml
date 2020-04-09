@@ -1,0 +1,182 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+  xmlns:u="sap.uxap" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+  xmlns:t="sap.ui.table" controllerName="com.ui5.project.zcvp_prodconfig.Prodconfig"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+  <Page title="">
+    <customHeader>
+      <Bar>
+        <contentMiddle>
+          <Title text='Product Configuration' level='H1' titleStyle='H2' />
+        </contentMiddle>
+        <contentRight>
+          <Image src="Images/XeroxLogo.png"  height="70%"/> 
+
+        </contentRight>
+      </Bar>
+    </customHeader>
+    <content>
+      <l:Grid defaultSpan="L12 M12 S12" vSpacing="0" hSpacing="0"
+        class="styleForContent G_Form_Column">
+        <l:content>
+          <f:SimpleForm minWidth="1024" maxContainerCols="2"
+            editable="true" layout="ResponsiveGridLayout" title="" labelSpanL="2"
+            labelSpanM="2" emptySpanL="0" emptySpanM="0" emptySpanS="1"
+            columnsL="2" columnsM="2">
+            <f:content>
+              <Text id='idPrdId' >
+                <layoutData>
+                  <l:GridData span="L2 M2 S6" />
+                </layoutData>
+              </Text>
+
+              <MessageStrip class='styleFormessageStrip'
+                text='{path:"ProductModel>/results/0/Messages",formatter:".messageFormat"}'>
+                <layoutData>
+                  <l:GridData span="L6 M6 S12" />
+                </layoutData>
+              </MessageStrip>
+              <Text>
+                <layoutData>
+                  <l:GridData span="L3 M3 S6" />
+                </layoutData>
+              </Text>
+
+              <Image height="70%"
+                src="{path:'ProductModel>/results/0/StatusInd',formatter:'.icon'}">
+                <layoutData>
+                  <l:GridData span="L1 M1 S6" />
+                </layoutData>
+              </Image>
+            </f:content>
+          </f:SimpleForm>
+
+        </l:content>
+      </l:Grid>
+      <l:Splitter height="500px" width="100%" class='styleforSplitter'>
+        <HBox>
+          <t:Table height="100%" width="100%"
+            class="styleForPadding1 styleForBackground" id='idInstance'
+            showNoData='true' selectionMode='None' rows='{/results}'>
+            <t:columns>
+              <t:Column width="5rem">
+                <Label text='Instance' design='Bold' class='styleforLabelFontSize' />
+                <t:template>
+                  <Text text="{Prodid}" wrapping="false" class='styleforLabelFontSize'/>
+                </t:template>
+              </t:Column>
+              <t:Column width="8.5rem" >
+                <Label text='Component Name' design='Bold' class='styleforLabelFontSize'/>
+                <t:template>
+                  <Text text="{ProdName}" class='styleforLabelFontSize'/>
+                </t:template>
+              </t:Column>
+              <t:Column width="4rem" >
+                <Label text='Quantity' design='Bold' class='styleforLabelFontSize' />
+                <t:template>
+                  <Text text="{ProdQuan}" class='styleforLabelFontSize' />
+                </t:template>
+              </t:Column>
+              <t:Column width="4rem" >
+                <Label text='Position' design='Bold' class='styleforLabelFontSize'/>
+                <t:template>
+                  <Text text="{ProdPosn}" class='styleforLabelFontSize' />
+                </t:template>
+              </t:Column>
+            </t:columns>
+          </t:Table>
+          <layoutData>
+            <l:SplitterLayoutData size="380px" />
+          </layoutData>
+        </HBox>
+        <HBox class='styleForIconTab'>
+
+          <IconTabBar id="idIcontab" items='{ProductModel>/results}'
+            showSelection="true" stretchContentHeight="true" class='styleForIconTab'>
+            <items>
+              <IconTabFilter text="{ProductModel>Groupname}">
+                <List items="{ProductModel>GROUPTOFIELD/results}" class='styleSelectionContent' >
+                  <CustomListItem>
+                    <f:SimpleForm minWidth="1024" maxContainerCols="2" id='idIconSmart'
+                      layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+                      emptySpanL="3" emptySpanM="3" columnsL="1" columnsM="1"
+                      class='styleForBackground'>
+                      <Text text="{ProductModel>Fieldname}" class='textAlignment'>
+                        <layoutData>
+                          <l:GridData span="L2 M2 S4" />
+                        </layoutData>
+                      </Text>
+
+                      <Input value='{ProductModel>FIELDTOVAL/results/0/Valuedesc}'
+                        visible="{=${ProductModel>Fieldtype} === 'I' }" required="true"
+                        enabled="{=${ProductModel>Fieldedit} === 'true'}">
+                        <layoutData>
+                          <l:GridData span="L6 M6 S7" />
+                        </layoutData>
+                      </Input>
+
+                      <ComboBox items="{ProductModel>FIELDTOVAL/results}" 
+                        change='onSelectionChange' visible="{=${ProductModel>Fieldselmode} === 'S'}">
+                        <core:Item key="{ProductModel>Valueid}" text="{ProductModel>Valuedesc}" />
+                        <layoutData>
+                          <l:GridData span="L6 M6 S7" />
+                        </layoutData>
+                      </ComboBox>
+
+                      <MultiComboBox items="{ProductModel>FIELDTOVAL/results}" 
+                        visible="{=${ProductModel>Fieldselmode} === 'M'}"
+                        selectionFinish='onChange'>
+                        <core:Item key="{ProductModel>Valueid}" text="{ProductModel>Valuedesc}" />
+                        <layoutData>
+                          <l:GridData span="L6 M6 S7" />
+                        </layoutData>
+                      </MultiComboBox>
+
+                    </f:SimpleForm>
+                  </CustomListItem>
+                </List>
+              </IconTabFilter>
+            </items>
+          </IconTabBar>
+          <layoutData>
+            <l:SplitterLayoutData size="auto" />
+          </layoutData>
+        </HBox>
+        <HBox class='styleForIconTab'>
+
+          <f:SimpleForm id='idSelection' editable="false"
+            layout="ResponsiveGridLayout" title='Your Current Selection'
+            labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+            adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+            emptySpanS="0" columnsXL="1" columnsL="2" columnsM="2"
+            singleContainerFullSize="false" class="styleForPadding styleForBackground styleForFont styleForGridSelection"
+            visibility="false">
+            <f:content>
+              <!-- <u:ObjectPageLayout id="ObjectPageLayout"> <u:headerTitle> <u:ObjectPageHeader&nbsp;
+                objectTitle="Your Current Selection" /> </u:headerTitle> <u:sections> <u:ObjectPageSection&nbsp;
+                id='idObjectPage' /> </u:sections> </u:ObjectPageLayout> -->
+            </f:content>
+          </f:SimpleForm>
+
+          <layoutData>
+            <!-- <l:SplitterLayoutData size="35%" minSize="220px" /> -->
+            <l:SplitterLayoutData size="28%" minSize="170px" />
+          </layoutData>
+        </HBox>
+      </l:Splitter>
+
+    </content>
+    <footer>
+      <Bar>
+        <contentLeft>
+          <Button icon="sap-icon://home" press="home" />
+        </contentLeft>
+        <contentRight>
+<!--          <Button text="Check" press="onAccept" /> -->
+          <Button text='Reset' type='Reject' press='onReject' />
+          <Button text="Accept" type='Accept' press='onNext' />
+        </contentRight>
+      </Bar>
+    </footer>
+
+  </Page>
+</core:View>

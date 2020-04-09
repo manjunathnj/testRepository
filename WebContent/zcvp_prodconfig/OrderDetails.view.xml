@@ -1,0 +1,224 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	controllerName="com.ui5.project.zcvp_prodconfig.OrderDetails" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page>
+		<customHeader>
+			<Bar>
+				<contentMiddle>
+					<Title text='Order Details' level='H1' titleStyle='H2' />
+				</contentMiddle>
+				<contentRight>
+					<Image src="Images/XeroxLogo.png" height="70%" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto"
+				class='styleSelectionContent'>
+				<l:content>
+					<HBox>
+						<f:SimpleForm minWidth="1024" maxContainerCols="2"
+							editable="true" layout="ResponsiveGridLayout" title="Customer Information"
+							labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0"
+							emptySpanS="1" columnsL="2" columnsM="2" class='styleSelectionContent'>
+							<!-- <core:Title level='H4' /> -->
+							<Label text="Customer/Xerox Entity" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/CustEntity}">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+							<Label text="Ship-to Country" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/ShipTo}">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+							<Label text="Purchase Order Number" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/PONum}">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+							<Label text="Contact Name" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/ContactName}">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+							<Label text="Contact Telephone Number" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/ContactTNo}" type="Tel">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+						</f:SimpleForm>
+						<layoutData>
+							<l:GridData span="L6 M6 S6" />
+						</layoutData>
+					</HBox>
+					<HBox>
+						<f:SimpleForm minWidth="1024" maxContainerCols="2"
+							editable="true" layout="ResponsiveGridLayout" title="Order fulfilment Information"
+							labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0"
+							emptySpanS="1" columnsL="2" columnsM="2" class='styleSelectionContent'>
+							<!-- <core:Title level='H4' /> -->
+							<Label text="Configuration Order Quantity" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/ConfOrdQuan}" type="Number" liveChange="NumberValidation">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+							<Label text="Order Date" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+
+							<DatePicker
+								value="{path:'oModel>/OrderDate',type:'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'dd/MM/yyyy'}}}"
+								valueFormat="dd/MM/yyyy" displayFormat='dd/MM/yyyy'>
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</DatePicker>
+							<Label text="Required Shipment Date" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<DatePicker
+								value="{path:'oModel>/ReqShipDate',type:'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'dd/MM/yyyy'}}}"
+								valueFormat="dd/MM/yyyy" displayFormat='dd/MM/yyyy'>
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</DatePicker>
+							<Label text="Customer Required Install Date" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<DatePicker
+								value="{path:'oModel>/InstallDate',type:'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'dd/MM/yyyy'}}}"
+								valueFormat="dd/MM/yyyy" displayFormat='dd/MM/yyyy'>
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</DatePicker>
+						</f:SimpleForm>
+						<layoutData>
+							<l:GridData span="L6 M6 S6" />
+						</layoutData>
+					</HBox>
+				</l:content>
+			</l:Grid>
+			<l:Grid defaultSpan="L12 M12 S12" width="auto"
+				class='styleSelectionContent'>
+				<l:content>
+					<HBox>
+						<f:SimpleForm minWidth="1024" maxContainerCols="2"
+							title="Special Delivery Address" editable="true" layout="ResponsiveGridLayout"
+							labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0"
+							emptySpanS="1" columnsL="2" columnsM="2" class='styleSelectionContent'>
+							<!-- <core:Title level='H4' /> -->
+							<Label text="Line 1" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/Line1}">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+							<Label text="Line 2" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/Line2}">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+							<Label text="Line 3" design="Bold">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Label>
+							<Input value="{oModel>/Line3}">
+								<layoutData>
+									<l:GridData span="L6 M6 S6" />
+								</layoutData>
+							</Input>
+						</f:SimpleForm>
+						<layoutData>
+							<l:GridData span="L6 M6 S6" />
+						</layoutData>
+					</HBox>
+					<HBox>
+						<f:SimpleForm minWidth="1024" maxContainerCols="2"
+							title="Special Instructions" editable="true" layout="ResponsiveGridLayout"
+							labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0"
+							emptySpanS="1" columnsL="2" columnsM="2" class='styleSelectionContent'>
+							<!-- <core:Title level='H4' /> -->
+							<TextArea value="{oModel>/SplInstr}" width="100%" rows='4'
+								cols='100'>
+								<layoutData>
+									<l:GridData span="L2 M12 S12" />
+								</layoutData>
+							</TextArea>
+						</f:SimpleForm>
+						<layoutData>
+							<l:GridData span="L6 M6 S6" />
+						</layoutData>
+					</HBox>
+				</l:content>
+			</l:Grid>
+
+
+		</content>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<!-- <Label binding="{/UserDetailsSet('')}" text="{FullName}" class="user-details 
+						userName" /> <Link text="LogOut" emphasized="true" class="user-details" press="handleLogOut" 
+						/> -->
+					<Button icon="sap-icon://home" press="home" />
+				</contentLeft>
+				<contentRight>
+					<Button text='Reset' type='Reject' press='onReject' />
+					<Button text="Text File" press="onText" icon="sap-icon://attachment-text-file" />
+					<Button text="Pdf" press="onPdf" icon="sap-icon://pdf-attachment" />
+
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
