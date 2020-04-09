@@ -1,0 +1,57 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.ui5.project.zcvp_prodconfig.ProdCatalog"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table">
+	<Page id='idPage1'>
+		<customHeader>
+			<Bar class="styleForHeader">
+				<contentMiddle>
+					<Title text='Product Selection' level='H1' titleStyle='H2'/>
+				</contentMiddle>
+				<contentRight>
+					<Image src="Images/XeroxLogo.png" height="70%"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<Panel headerText="" width='51%' class='styleSelectionContent styleForCAlignment'>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" columnsXL="1" columnsL="1" columnsM="1" labelSpanL="1" labelSpanM="1"
+				emptySpanL="5" emptySpanM="5" class='styleForProd'>
+				<f:content>
+					<Label text="Product Id" design='Bold'>
+						<layoutData>
+							<l:GridData span="L2 M2 S2"></l:GridData>
+						</layoutData>
+					</Label>
+					<Input id='idProject' change='onChange' submit='onSubmit'>
+						<layoutData>
+							<l:GridData span="L5 M5 S6"></l:GridData>
+						</layoutData>
+					</Input>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<FlexBox alignItems="Center" justifyContent="Center" class="sapUiMediumMarginBegin">
+			<t:TreeTable id="idMtree" width='55%' selectionMode="Single" enableColumnReordering="false" expandFirstLevel="false"
+				class='styleForBackground styleForCAlignment'>
+				<t:columns>
+					<t:Column>
+						<Label text='Product Groups - Sales View' design='Bold'/>
+						<t:template>
+							<!-- <Link text="{text}" press="onPrjDesc" /> -->
+							<Link text="{ProdName}" press="onPrjDesc" enabled="{path:'Link',formatter:'.fnLinkVisible'}"/>
+							<!-- <Text text="{ProdID}" /> <Text text="{ProdName}" /> -->
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:TreeTable>
+		</FlexBox>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Button icon="sap-icon://log" press="logoff" text="Logout"/>
+				</contentLeft>
+				<contentRight>
+					<Button text="Configure" type='Accept' press='onSubmit'/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
